@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'check.dart';
 import 'home.dart';
 
 void main() {
@@ -19,9 +18,7 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(color: Colors.black, fontSize: 26))),
             backgroundColor: Colors.white,
           ),
-          body: (
-              // Home()
-              Check())),
+          body: (Home())),
     );
   }
 }
