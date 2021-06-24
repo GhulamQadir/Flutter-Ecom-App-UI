@@ -23,11 +23,11 @@ class _HomeState extends State<Home> {
   ];
 
   final List<IconData> categIcon = [
-    (Icons.power),
-    (Icons.electric_moped_sharp),
-    (Icons.electric_moped_sharp),
-    (Icons.houseboat),
-    (Icons.electric_moped_sharp),
+    (Icons.local_drink),
+    (Icons.bolt),
+    (Icons.bolt),
+    (Icons.bolt),
+    (Icons.double_arrow),
   ];
   var categName = [
     " Clothes",
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
               icon: Icon(
                 Icons.home,
                 size: 30,
-                color: Colors.purpleAccent,
+                color: Colors.purple[400],
               ),
               label: "",
             ),
@@ -113,6 +113,25 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(8.0),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Container(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Items",
+                      style:
+                          TextStyle(fontSize: 23, fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      width: 200,
+                    ),
+                    Text("View More",
+                        style: TextStyle(color: Colors.purple[400])),
+                  ],
+                ),
+              ),
               Container(
                   height: 300,
                   child: ListView.builder(
@@ -237,7 +256,7 @@ class _HomeState extends State<Home> {
                                     Icon(
                                       categIcon[index],
                                       size: 33,
-                                      color: Colors.purpleAccent,
+                                      color: Colors.purple[400],
                                     ),
                                     // Icon(categIcon[index]),
                                     Column(
@@ -269,19 +288,21 @@ class _HomeState extends State<Home> {
                   SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        "Popular Items",
-                        style: TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.w600),
-                      ),
-                      SizedBox(
-                        width: 118,
-                      ),
-                      Text("View More",
-                          style: TextStyle(color: Colors.purpleAccent)),
-                    ],
+                  Container(
+                    child: Row(
+                      children: [
+                        Text(
+                          "Popular Items",
+                          style: TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          width: 118,
+                        ),
+                        Text("View More",
+                            style: TextStyle(color: Colors.purple[400])),
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -379,7 +400,7 @@ class _HomeState extends State<Home> {
                     );
                   }),
                 ),
-              )
+              ),
             ]),
           ),
         ));
