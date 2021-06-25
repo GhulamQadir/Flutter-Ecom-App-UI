@@ -71,6 +71,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.search,
+            size: 32,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.purple[400],
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: [
@@ -83,18 +93,24 @@ class _HomeState extends State<Home> {
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-                size: 30,
-                color: Colors.grey,
+              icon: Padding(
+                padding: const EdgeInsets.only(right: 40),
+                child: Icon(
+                  Icons.favorite,
+                  size: 30,
+                  color: Colors.grey,
+                ),
               ),
               label: "",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_shopping_cart,
-                size: 30,
-                color: Colors.grey,
+              icon: Padding(
+                padding: const EdgeInsets.only(left: 40),
+                child: Icon(
+                  Icons.add_shopping_cart,
+                  size: 30,
+                  color: Colors.grey,
+                ),
               ),
               label: "",
             ),
@@ -160,7 +176,7 @@ class _HomeState extends State<Home> {
                                       width: 340,
                                       decoration: BoxDecoration(
                                         image: DecorationImage(
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.fill,
                                           image:
                                               NetworkImage(prodImages[index]),
                                         ),
@@ -316,8 +332,6 @@ class _HomeState extends State<Home> {
                 height: 150,
                 child: GridView.count(
                   shrinkWrap: true,
-                  // scrollDirection: Axis.vertical,
-                  // physics: NeverScrollableScrollPhysics(),
                   crossAxisCount: 2,
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
@@ -340,7 +354,7 @@ class _HomeState extends State<Home> {
                               width: 160,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fill,
                                   image: NetworkImage(popCategImages[index]),
                                 ),
                                 borderRadius:
@@ -405,25 +419,4 @@ class _HomeState extends State<Home> {
           ),
         ));
   }
-  //         SizedBox(
-  //           height: 30,
-  //         ),
-  //         GridView.count(
-  //           shrinkWrap: true,
-  //           physics: NeverScrollableScrollPhysics(),
-  //           crossAxisCount: 2,
-  //           crossAxisSpacing: 20,
-  //           mainAxisSpacing: 20,
-  //           children: List.generate(lst.length, (index) {
-  //             return Container(
-  //               color: Colors.brown,
-  //               height: 100,
-  //               width: 100,
-  //             );
-  //           }),
-  //         )
-  //       ],
-  //     ),
-  //   ),
-  // ));
 }
